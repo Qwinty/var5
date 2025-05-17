@@ -151,16 +151,83 @@ body {
     padding: 1em;
     margin-bottom: 0.5em;
     border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .movie-item__title {
     font-weight: bold;
+    margin-right: 10px;
+}
+
+.movie-item__controls {
+    display: flex;
+    align-items: center;
 }
 
 .movie-item__status {
     font-style: italic;
     color: #666;
-    margin-left: 0.5em;
+    margin-right: 15px;
+}
+
+.movie-item__delete-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.movie-item__delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Стили для формы добавления фильма */
+.movie-form {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.movie-form__input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.movie-form__input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.movie-form__button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.movie-form__button:hover {
+    background-color: #218838;
+}
+
+.movies-list__empty-message {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
 }
 
 .footer {

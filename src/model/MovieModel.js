@@ -1,9 +1,62 @@
 import { mockMovies } from '../../mock/mock.js';
 
+// Класс модели фильмов
 export default class MovieModel {
   #movies = mockMovies;
+  #observers = [];
 
+  /**
+   * Возвращает список фильмов
+   * @returns {Array} Массив с объектами фильмов
+   */
   get movies() {
     return this.#movies;
+  }
+
+  /**
+   * Добавляет наблюдателя для отслеживания изменений в модели
+   * @param {Function} observer - Функция-наблюдатель
+   */
+  addObserver(observer) {
+    this.#observers.push(observer);
+  }
+
+  /**
+   * Удаляет наблюдателя
+   * @param {Function} observer - Функция-наблюдатель
+   */
+  removeObserver(observer) {
+    this.#observers = this.#observers.filter((existingObserver) => existingObserver !== observer);
+  }
+
+  /**
+   * Уведомляет всех наблюдателей об изменении данных
+   */
+  _notify() {
+    this.#observers.forEach((observer) => observer(this.#movies));
+  }
+
+  /**
+   * Добавляет новый фильм в список
+   * @param {string} title - Название фильма
+   */
+  addMovie(title) {
+    const newMovie = {
+      id: String(Date.now()),
+      title,
+      isWatched: false,
+    };
+
+    this.#movies = [newMovie, ...this.#movies];
+    this._notify();
+  }
+
+  /**
+   * Удаляет фильм из списка
+   * @param {string} id - Идентификатор фильма
+   */
+  deleteMovie(id) {
+    this.#movies = this.#movies.filter((movie) => movie.id !== id);
+    this._notify();
   }
 } 
