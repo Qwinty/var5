@@ -156,6 +156,11 @@ body {
     align-items: center;
 }
 
+.movie-item--watched .movie-item__title {
+    text-decoration: line-through;
+    color: #888;
+}
+
 .movie-item__title {
     font-weight: bold;
     margin-right: 10px;
@@ -179,10 +184,39 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-left: 5px;
 }
 
 .movie-item__delete-button:hover {
     background-color: #c82333;
+}
+
+.movie-item__edit-button {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.movie-item__edit-button:hover {
+    background-color: #e0a800;
+}
+
+.movie-item__watched-button {
+    background-color: #17a2b8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.movie-item__watched-button:hover {
+    background-color: #138496;
 }
 
 /* Стили для формы добавления фильма */
@@ -237,4 +271,129 @@ body {
     border-top: 1px solid #ddd;
     font-size: 0.9em;
     color: #666;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__gif {
+    max-width: 210px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для формы редактирования фильма */
+.movie-edit-form {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.movie-edit-form__input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.movie-edit-form__input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.movie-edit-form__watched-wrapper {
+    margin-bottom: 15px;
+}
+
+.movie-edit-form__watched-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.movie-edit-form__watched-checkbox {
+    margin-right: 8px;
+}
+
+.movie-edit-form__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.movie-edit-form__save-button {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.movie-edit-form__save-button:hover {
+    background-color: #218838;
+}
+
+.movie-edit-form__cancel-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.movie-edit-form__cancel-button:hover {
+    background-color: #5a6268;
+}
+
+/* Стили для фильтра фильмов */
+.movie-filter {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.movie-filter__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.movie-filter__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.movie-filter__button {
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid #ced4da;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.movie-filter__button:hover {
+    background-color: #dee2e6;
+}
+
+.movie-filter__button--active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.movie-filter__button--active:hover {
+    background-color: #0069d9;
 }
